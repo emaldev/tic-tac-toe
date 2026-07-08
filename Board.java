@@ -22,5 +22,13 @@ public class Board{
             }
         }
     }
+    public void placeSymbol(int row, int col, char symbol){
+        if(row >= 0 && row < 3 && col >= 0 && col < 3)
+            if(board[row][col] == '-'){
+        board[row][col] = symbol;
+            }else{
+                System.out.println("This place is already occupied.");
+            }
+    }
     
 }
