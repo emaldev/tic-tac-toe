@@ -17,5 +17,13 @@ public class Main{
         
         board.placeSymbol(row, col, player1.symbol);
         board.printBoard();
+        
+         System.out.print("Enter row: ");
+         row = input.nextInt();
+        System.out.print("Enter column: ");
+         col = input.nextInt();
+        board.placeSymbol(row, col, player2.symbol);
+        board.printBoard();
+       
     }
 }

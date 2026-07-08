@@ -30,5 +30,7 @@ public class Board{
                 System.out.println("This place is already occupied.");
             }
     }
+
+
     
 }
