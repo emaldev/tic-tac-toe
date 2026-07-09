@@ -56,6 +56,10 @@ public class Board{
                        board[1][1] == board[1][2] &&
                        board[1][2] != '-')
 
+                       if(board[2][0] == board[2][1] && 
+                          board[2][1] == board[2][2] &&
+                          board[2][0] != '-')
+
            {
                 return true;
             }
