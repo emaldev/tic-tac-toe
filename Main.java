@@ -14,16 +14,26 @@ public class Main{
         //creat object in border 
         Board board = new Board();
         board.fillBoard();
+        Player currentPlayer = player1;
         
         board.placeSymbol(row, col, player1.symbol);
         board.printBoard();
-        
+        while(true){
          System.out.print("Enter row: ");
          row = input.nextInt();
         System.out.print("Enter column: ");
          col = input.nextInt();
         board.placeSymbol(row, col, player2.symbol);
         board.printBoard();
+        
+        if(currentPlayer == player1){
+            currentPlayer = player2;
+        }else{
+            currentPlayer = player1;
+        }
+
+        }
+    
        
     }
 }
