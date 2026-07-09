@@ -25,6 +25,11 @@ public class Main{
          col = input.nextInt();
         board.placeSymbol(row, col, player2.symbol);
         board.printBoard();
+
+        if(board.chechWinner()){
+            System.out.println(currentPlayer.name + "Wins!");
+            break;
+        }
         
         if(currentPlayer == player1){
             currentPlayer = player2;
