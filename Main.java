@@ -19,16 +19,18 @@ public class Main{
         board.placeSymbol(row, col, player1.symbol);
         board.printBoard();
         while(true){
+            System.out.println(currentPlayer.name + "s Turn");
          System.out.print("Enter row: ");
          row = input.nextInt();
         System.out.print("Enter column: ");
          col = input.nextInt();
-        board.placeSymbol(row, col, player2.symbol);
+        board.placeSymbol(row, col, currentPlayer.symbol);
         board.printBoard();
 
         if(board.chechWinner()){
             System.out.println(currentPlayer.name + "Wins!");
             break;
+
         }
         
         if(currentPlayer == player1){
