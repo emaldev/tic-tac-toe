@@ -32,7 +32,12 @@ public class Main{
         if(board.chechWinner()){
             System.out.println(currentPlayer.name + "Wins!");
             break;
+            
 
+        }
+        if(board.isBoardFull()){
+            System.out.println("Draw!");
+            break;
         }
         
         if(currentPlayer == player1){
