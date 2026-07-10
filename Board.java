@@ -22,12 +22,17 @@ public class Board{
             }
         }
     }
-    public void placeSymbol(int row, int col, char symbol){
+    public boolean placeSymbol(int row, int col, char symbol){
         if(row >= 0 && row < 3 && col >= 0 && col < 3)
             if(board[row][col] == '-'){
         board[row][col] = symbol;
+        return true;
             }else{
                 System.out.println("This place is already occupied.");
+                return false;
+            }else{
+                System.out.println("Invalid position.");
+                return false;
             }
     }
     public  boolean chechWinner(){
@@ -92,6 +97,18 @@ public class Board{
 
         
          return false;
+    }
+
+    public  boolean isBoardFull(){
+        for(int i = 0; i < board.length; i++){
+            for(int j = 0; j < board.length; j++){
+                if(board[i][j] == '-'){
+                    return false;
+                }
+                
+            }
+        }
+        return true;
     }
 
 

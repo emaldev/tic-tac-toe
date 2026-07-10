@@ -24,8 +24,10 @@ public class Main{
          row = input.nextInt();
         System.out.print("Enter column: ");
          col = input.nextInt();
-        board.placeSymbol(row, col, currentPlayer.symbol);
-        board.printBoard();
+        if(board.placeSymbol(row, col, currentPlayer.symbol)){
+          board.printBoard();
+        
+        
 
         if(board.chechWinner()){
             System.out.println(currentPlayer.name + "Wins!");
@@ -40,6 +42,8 @@ public class Main{
         }
 
         }
+    }
+    
     
        
     }
