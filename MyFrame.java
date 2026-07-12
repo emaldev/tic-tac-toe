@@ -39,5 +39,16 @@ public class MyFrame extends JFrame {
 
         this.setVisible(true);
     }
+
+    public void chechWinner(){
+        
+
+        if(!buttons[0].getText().equals("")&&
+            buttons[0].getText().equals(buttons[1].getText())&&
+             buttons[1].getText().equals(buttons[2].getText())){
+                System.out.println(buttons[0].getText() + "Wins!");
+             }
+             
+    }
     
 }
