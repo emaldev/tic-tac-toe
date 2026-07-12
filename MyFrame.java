@@ -30,7 +30,9 @@ public class MyFrame extends JFrame {
                 buttons[index].setText("O");
                 xTurn = true;
             }
+             checkWinner();
         });
+
             this.add(buttons[index]);
         }
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -40,7 +42,7 @@ public class MyFrame extends JFrame {
         this.setVisible(true);
     }
 
-    public void chechWinner(){
+    public void checkWinner(){
         
 
         if(!buttons[0].getText().equals("")&&
@@ -48,7 +50,21 @@ public class MyFrame extends JFrame {
              buttons[1].getText().equals(buttons[2].getText())){
                 System.out.println(buttons[0].getText() + "Wins!");
              }
-             
+
+             if(!buttons[3]. getText().equals("") &&
+                 buttons[3].getText().equals(buttons[4].getText()) && 
+                buttons[4]. getText().equals(buttons[5].getText())){
+                    System.out.println(buttons[3].getText() + "Wins!");
+                }
+
+                if(!buttons[6].getText().equals("") && 
+                    buttons[6].getText().equals(buttons[7].getText()) && 
+                     buttons[7].getText().equals(buttons[8].getText())){
+                        System.out.println(buttons[6].getText() + "Wins!");
+                     }
+
+        
+
     }
     
 }
