@@ -1,8 +1,9 @@
 import java.util.Scanner;
 public class Main{
     public static void main(String[] args){
+         new MyFrame();
         Scanner input = new Scanner(System.in);
-
+    
         System.out.print("Enter row: ");
         int row = input.nextInt();
         System.out.print("Enter column: ");
@@ -52,4 +53,6 @@ public class Main{
     
        
     }
+    
+    
 }
