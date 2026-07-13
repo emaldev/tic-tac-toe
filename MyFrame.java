@@ -1,5 +1,9 @@
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JLabel;
+import java.awt.Font;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 
 public class MyFrame extends JFrame {
@@ -40,6 +44,13 @@ public class MyFrame extends JFrame {
         this.setLayout(null);
         this.setSize(700, 700);
 
+        JLabel title = new JLabel("TIC TAC TOE");
+        title.setBounds(180, 20, 400, 50);
+        title.setFont(new Font("Arial", Font.BOLD, 35));
+        title.setForeground(Color.BLUE);
+
+        this.getContentPane().setBackground(new Color(230,240,255));
+         this.add(title);
         this.setVisible(true);
     }
 
