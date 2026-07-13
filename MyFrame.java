@@ -1,5 +1,6 @@
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class MyFrame extends JFrame {
 
@@ -48,23 +49,84 @@ public class MyFrame extends JFrame {
         if(!buttons[0].getText().equals("")&&
             buttons[0].getText().equals(buttons[1].getText())&&
              buttons[1].getText().equals(buttons[2].getText())){
-                System.out.println(buttons[0].getText() + "Wins!");
+               winner(buttons[0].getText());
              }
 
              if(!buttons[3]. getText().equals("") &&
                  buttons[3].getText().equals(buttons[4].getText()) && 
                 buttons[4]. getText().equals(buttons[5].getText())){
-                    System.out.println(buttons[3].getText() + "Wins!");
+                   winner(buttons[3].getText());
                 }
 
                 if(!buttons[6].getText().equals("") && 
                     buttons[6].getText().equals(buttons[7].getText()) && 
                      buttons[7].getText().equals(buttons[8].getText())){
-                        System.out.println(buttons[6].getText() + "Wins!");
+                        winner(buttons[6].getText());
                      }
+                     if(!buttons[0].getText().equals("") && 
+                         buttons[0].getText().equals(buttons[3].getText()) && 
+                        buttons[3].getText().equals(buttons[6].getText())){
+                           winner(buttons[0].getText());
+                        }
+                     if(!buttons[1].getText().equals("") && 
+                       buttons[1].getText().equals(buttons[4].getText()) && 
+                       buttons[4].getText().equals(buttons[7].getText())){
+                        winner(buttons[1].getText());
+                     }
+
+                     if(!buttons[2].getText().equals("") && 
+                         buttons[2].getText().equals(buttons[5].getText()) && 
+                          buttons[5].getText().equals(buttons[8].getText())){
+                            winner(buttons[2].getText());
+                          }
+                          // قطر اصلی
+                             if(!buttons[0].getText().equals("") &&
+                               buttons[0].getText().equals(buttons[4].getText()) &&
+                                 buttons[4].getText().equals(buttons[8].getText())){
+
+                                    winner(buttons[0].getText());
+                                      }
+
+// قطر دوم
+                                    if(!buttons[2].getText().equals("") &&
+                                         buttons[2].getText().equals(buttons[4].getText()) &&
+                                         buttons[4].getText().equals(buttons[6].getText())){
+
+                                          winner(buttons[2].getText());
+                                              }
+
+                     
+
+                     
 
         
 
     }
-    
+  public void winner(String player){
+
+    JOptionPane.showMessageDialog(this, player + " Wins!");
+
+    for(int i = 0; i < 9; i++){
+        buttons[i].setEnabled(false);
+    }
+
+    int choice = JOptionPane.showConfirmDialog(
+            this,
+            "Play Again?",
+            "Restart",
+            JOptionPane.YES_NO_OPTION
+    );
+
+    if(choice == JOptionPane.YES_OPTION){
+
+        for(int i = 0; i < 9; i++){
+            buttons[i].setText("");
+            buttons[i].setEnabled(true);
+        }
+
+        xTurn = true;
+    }else{
+        System.exit(0);
+    }
+}
 }
