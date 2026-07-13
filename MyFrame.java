@@ -11,6 +11,7 @@ public class MyFrame extends JFrame {
     JButton[] buttons = new JButton[9];
     boolean xTurn = true;
     MyFrame(){
+        
 
         
         for(int i = 0; i < 9; i++){
@@ -21,9 +22,22 @@ public class MyFrame extends JFrame {
             
             int x = 100 + col * 100;
             int y = 100 + row * 100;
+            buttons[index].setFont(new Font("Arial", Font.BOLD, 40));
+            buttons[index].setBackground(Color.WHITE);
+            buttons[index].setForeground(Color.RED);
+            buttons[index].setFocusable(false);
 
             buttons[index].setBounds(x, y, 100, 100);
             buttons[index].addActionListener(e -> {
+                if(xTurn){
+                buttons[index].setText("X");
+                buttons[index].setForeground(Color.BLUE);
+                xTurn = false;
+                }else{
+                 buttons[index].setText("O");
+                buttons[index].setForeground(Color.RED);
+                 xTurn = true;
+                   }
                 if (!buttons[index].getText().equals("")) {
                 return;
                     }
@@ -48,6 +62,7 @@ public class MyFrame extends JFrame {
         title.setBounds(180, 20, 400, 50);
         title.setFont(new Font("Arial", Font.BOLD, 35));
         title.setForeground(Color.BLUE);
+        this.setTitle("Tic Tac Toe");
 
         this.getContentPane().setBackground(new Color(230,240,255));
          this.add(title);
